@@ -41,6 +41,7 @@ jobs:
       - name: Run E2E tests
         run: cd backend && npm run test:e2e
         env:
+          NODE_ENV: test
           DB_HOST: 127.0.0.1
           DB_USER: root
           DB_PASS: password
