@@ -518,7 +518,7 @@ const fetchTodos = async () => {
 };
 
 useEffect(() => { fetchTodos(); }, [page]); // ← re-fetch on page change
-  const handle = (e) => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
+  
 
 
   const addTodo = async () => {
