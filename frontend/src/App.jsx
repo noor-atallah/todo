@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
-const API = 'http://localhost:3001';
+const API = 'https://todo-gkkd.onrender.com';
 
 // Axios instance that auto-attaches token
 const api = axios.create({ baseURL: API });
