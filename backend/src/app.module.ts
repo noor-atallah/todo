@@ -14,16 +14,13 @@ import { User } from './user/user.entity';
     ConfigModule.forRoot({ isGlobal: true }),
     ScheduleModule.forRoot(),
     TypeOrmModule.forRoot({
-    type: 'mysql',
-    host: process.env.DB_HOST || 'localhost',
-    port: 3306,
-    username: process.env.DB_USER || 'root',
-    password: process.env.DB_PASS || 'password',
-    database: process.env.DB_NAME || 'tododb',
-    entities: [__dirname + '/**/*.entity{.ts,.js}'],
-    synchronize: process.env.NODE_ENV !== 'production', 
-    logging: true
-}),
+      type: 'postgres',
+      url: process.env.DATABASE_URL,
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: process.env.NODE_ENV !== 'production',
+      ssl: { rejectUnauthorized: false },
+      logging: true,
+    }),
     TodoModule,
     AuthModule,
     MailModule,
@@ -31,13 +28,3 @@ import { User } from './user/user.entity';
   ],
 })
 export class AppModule {}
-// do migration 
-// integration with any email services wherever the task is done send an email to the user 
-// cron job to scheduale in a day once to see the task that are done and send a summery email 
-// for local purposes send every 1 minute
-// do jwt auth
-// hot reload issue fix in docker
-
-// paging to a list tasks of more than 100 lists 
-// testing all points of the system command in pakage.json so that it makes tests and make sure everything is runing 
-// ci/cd 

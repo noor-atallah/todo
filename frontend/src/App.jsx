@@ -434,7 +434,7 @@ function AuthScreen({ onLogin }) {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-
+  const handle = (e) => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
   const submit = async () => {
     setError('');
     setLoading(true);
