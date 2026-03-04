@@ -22,6 +22,7 @@ import { User } from './user/user.entity';
     database: process.env.DB_NAME || 'tododb',
     entities: [__dirname + '/**/*.entity{.ts,.js}'],
     synchronize: process.env.NODE_ENV !== 'production', 
+    logging: true
 }),
     TodoModule,
     AuthModule,

@@ -10,3 +10,7 @@ export class CreateTodoDto {
   @IsOptional()
   description?: string;
 }
+
+
+// use nest pagination pakage important!!!!
+// ER_PARSE_ERROR  make validation to not accept ant offset with minus
